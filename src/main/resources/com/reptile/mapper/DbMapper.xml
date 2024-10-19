@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.reptile.mapper.DbMapper">
+    
+    <update id="createMiyousheTable">
+        CREATE TABLE `${tableName}` (
+                                        `reply_id` bigint NOT NULL COMMENT '评论ID （主键）',
+                                        `game_id` int NOT NULL COMMENT '游戏的社区，2为原神',
+                                        `post_id` varchar(50) NOT NULL COMMENT '帖子ID',
+                                        `uid` varchar(50) NOT NULL COMMENT '用户ID',
+                                        `r_uid` varchar(50) DEFAULT '0' COMMENT '回复的用户ID (为0时表示这是一级评论)',
+                                        `content` text NOT NULL COMMENT '评论内容',
+                                        `f_forum_id` int NOT NULL COMMENT '未知字段',
+                                        `floor_id` int NOT NULL COMMENT '楼ID (评论第几楼)',
+                                        `is_deleted` tinyint(1) DEFAULT '0' COMMENT '是否删除 (逻辑删除标记)',
+                                        `delete_src` int DEFAULT '0' COMMENT '删除源',
+                                        `created_at` bigint NOT NULL COMMENT '创建时间戳 (发评论时间)',
+                                        `deleted_at` bigint DEFAULT NULL COMMENT '删除时间戳',
+                                        `struct_content` text NOT NULL COMMENT '评论格式化字符串',
+                                        `is_top` tinyint(1) DEFAULT '0' COMMENT '是否置顶',
+                                        `has_block_word` tinyint(1) DEFAULT '0' COMMENT '是否包含屏蔽词',
+                                        `overt_status` tinyint(1) DEFAULT '0' COMMENT '公开状态，1表示公开',
+                                        `is_showing_missing` tinyint(1) DEFAULT '0' COMMENT '是否显示缺失',
+                                        `view_status` tinyint(1) DEFAULT '0' COMMENT '显示状态',
+                                        `nickname` varchar(100) NOT NULL COMMENT '用户昵称',
+                                        `gender` tinyint(1) DEFAULT '0' COMMENT '性别',
+                                        `certification_type` tinyint(1) DEFAULT '0' COMMENT '用户认证类型',
+                                        `certification_label` varchar(100) DEFAULT '' COMMENT '用户认证标签',
+                                        `level` int DEFAULT '0' COMMENT '用户等级',
+                                        `exp` int DEFAULT '0' COMMENT '用户经验',
+                                        `ip_region` varchar(100) DEFAULT '' COMMENT 'IP地址',
+                                        `like_num` int DEFAULT '0' COMMENT '点赞数',
+                                        `sub_num` int DEFAULT '0' COMMENT '回复数',
+                                        `dislike_num` int DEFAULT '0' COMMENT '点踩数',
+                                        `is_official_master` tinyint(1) DEFAULT '0' COMMENT '是否官方',
+                                        `is_user_master` tinyint(1) DEFAULT '0' COMMENT '未知字段',
+                                        PRIMARY KEY (`reply_id` DESC) USING BTREE
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT = '${tableName}';
+    </update>
+    
+</mapper>

@@ -1,0 +1,45 @@
+{
+  "reply": {
+    "game_id": 2,     哪个游戏的社区，原神/崩三/....(2为原神)
+    "post_id": "55221094",    // 帖子id
+    "reply_id": "1813347972314468352",    // 评论id  (雪花算法之类的id自动生成策略)
+    "uid": "393124065",   // 用户id
+    "r_uid": "0",   // 回复的用户id (为0时表示这是一级评论)
+    "content": "1",   // 评论内容
+    "f_forum_id": 28,    // 不知道是啥
+    "floor_id": 2,    // 楼id (评论第几楼)
+    "is_deleted": 0,     // 是否删除(应该是逻辑删除标记)
+    "delete_src": 0,    // 删除源？？？
+    "created_at": 1721170821,   // 创建时间戳 (发评论时间)
+    "deleted_at": 2288912640,    // 删除时间戳
+    "struct_content": "[{\"insert\":\"1\"}]",    // 评论格式化字符串
+    "is_top": false,     //是否置顶
+    "has_block_word": false,     // 是否包含屏蔽词
+    "overt_status": 0,      // 公开状态？ 1表示公开
+    "is_showing_missing": false,   // 是否现实缺失？
+    "view_status": 0   //显示状态
+  },
+  "user": {    // 用户响应体
+    "uid": "393124065",    //用户id
+    "nickname": "芜湖镜湖分店",   // 用户昵称
+    "gender": 0,    //性别
+    "certification": {   // 认证
+      "type": 0,    //类型
+      "label": ""   // 标签
+    },
+    "level_exp": {
+      "level": 12,   // 用户等级
+      "exp": 21184     // 用户经验
+    },
+    "ip_region": "安徽"    // ip地址
+  },
+  "stat": {      // 评论数据统计
+    "like_num": 662,   // 点赞数
+    "sub_num": 49,   // 回复数
+    "dislike_num": 172   // 点踩数？
+  },
+  "master_status": {
+    "is_official_master": false,   // 是否官方
+    "is_user_master": false    // 不知道是什么
+  }
+}

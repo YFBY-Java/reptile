@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.reptile.mapper.MiyousheReviewMapper">
+    
+    
+    <insert id="insertMiyousheReviews" parameterType="list">
+        INSERT INTO ${tableName} (game_id, post_id, reply_id, uid, r_uid, content, f_forum_id, floor_id, is_deleted, delete_src, created_at, deleted_at, struct_content, is_top, has_block_word, overt_status, is_showing_missing, view_status, nickname, certification_type, certification_label, level, exp, ip_region, like_num, sub_num, dislike_num, is_official_master, is_user_master)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.gameId}, #{item.postId}, #{item.replyId}, #{item.uid}, #{item.rUid}, #{item.content}, #{item.fForumId}, #{item.floorId}, #{item.isDeleted}, #{item.deleteSrc}, #{item.createdAt}, #{item.deletedAt}, #{item.structContent}, #{item.isTop}, #{item.hasBlockWord}, #{item.overtStatus}, #{item.isShowingMissing}, #{item.viewStatus}, #{item.nickname}, #{item.certificationType}, #{item.certificationLabel}, #{item.level}, #{item.exp}, #{item.ipRegion}, #{item.likeNum}, #{item.subNum}, #{item.dislikeNum}, #{item.isOfficialMaster}, #{item.isUserMaster})
+        </foreach>
+    </insert>
+    
+    
+    
+</mapper>
